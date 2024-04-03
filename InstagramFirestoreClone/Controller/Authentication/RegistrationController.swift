@@ -17,7 +17,7 @@ class RegistrationController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(imageLiteralResourceName: "plus_photo"), for: .normal)
         button.tintColor = .white
-        button.addTarget(self, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(handleProfilePhotoSelect), for: .touchUpInside)
         return button
     }()
     
@@ -51,10 +51,10 @@ class RegistrationController: UIViewController {
         return button
     }()
     
-    private let AlreadyHaveAccountButton: UIButton = {
+    private  let AlreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Already have an account?", secondPart: "Sign Up")
-        button.addTarget(self, action: #selector(handleShowLogin), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(handleShowLogin), for: .touchUpInside)
         return button
     }()
     
