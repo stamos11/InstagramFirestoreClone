@@ -23,6 +23,8 @@
 		3E2E05412BA22157007096B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E05402BA22157007096B6 /* Extensions.swift */; };
 		3E2E05442BA36970007096B6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E05432BA36970007096B6 /* LoginController.swift */; };
 		3E2E05462BA3697C007096B6 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E05452BA3697C007096B6 /* RegistrationController.swift */; };
+		3E4F9B382BC1DE8000CC8794 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F9B372BC1DE8000CC8794 /* ProfileCell.swift */; };
+		3E4F9B3A2BC1DE9500CC8794 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F9B392BC1DE9500CC8794 /* ProfileHeader.swift */; };
 		3E5914BA2BA8CAED00247513 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5914B92BA8CAED00247513 /* AuthenticationViewModel.swift */; };
 		3E940CB12B9B981B00939B0B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E940CB02B9B981B00939B0B /* FeedCell.swift */; };
 		3EA7544C2BA3BE8D00C205AE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7544B2BA3BE8D00C205AE /* CustomTextField.swift */; };
@@ -51,6 +53,8 @@
 		3E2E05402BA22157007096B6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3E2E05432BA36970007096B6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3E2E05452BA3697C007096B6 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		3E4F9B372BC1DE8000CC8794 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		3E4F9B392BC1DE9500CC8794 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		3E5914B92BA8CAED00247513 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		3E940CB02B9B981B00939B0B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		3EA7544B2BA3BE8D00C205AE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		3E20CF8E2B990ADF001A6B6D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E4F9B3B2BC1DE9F00CC8794 /* Profile */,
 				3E940CB02B9B981B00939B0B /* FeedCell.swift */,
 				3EA7544B2BA3BE8D00C205AE /* CustomTextField.swift */,
 			);
@@ -173,6 +178,15 @@
 				3E2E05452BA3697C007096B6 /* RegistrationController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3E4F9B3B2BC1DE9F00CC8794 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3E4F9B392BC1DE9500CC8794 /* ProfileHeader.swift */,
+				3E4F9B372BC1DE8000CC8794 /* ProfileCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		57CE94AFEC08B651C4B36945 /* Pods */ = {
@@ -309,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EA7544C2BA3BE8D00C205AE /* CustomTextField.swift in Sources */,
+				3E4F9B3A2BC1DE9500CC8794 /* ProfileHeader.swift in Sources */,
 				3E20CF7A2B990836001A6B6D /* ViewController.swift in Sources */,
 				3E2E05462BA3697C007096B6 /* RegistrationController.swift in Sources */,
 				3E2E05442BA36970007096B6 /* LoginController.swift in Sources */,
@@ -323,6 +338,7 @@
 				3E20CF992B990D59001A6B6D /* NotificationsController.swift in Sources */,
 				3ED464222BBDE8F00021C6BA /* ImageUploader.swift in Sources */,
 				3ED464242BBDE8FE0021C6BA /* AuthService.swift in Sources */,
+				3E4F9B382BC1DE8000CC8794 /* ProfileCell.swift in Sources */,
 				3E2E05412BA22157007096B6 /* Extensions.swift in Sources */,
 				3E20CF782B990836001A6B6D /* SceneDelegate.swift in Sources */,
 			);
