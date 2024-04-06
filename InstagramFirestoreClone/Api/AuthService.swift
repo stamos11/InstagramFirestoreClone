@@ -7,6 +7,9 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+
+
 
 
 struct AuthCredentials {
@@ -17,6 +20,15 @@ struct AuthCredentials {
     let profileImage: UIImage
 }
 struct AuthService {
+    
+    static func logInUser(withEmail email: String, password: String, completion: @escaping(AuthDataResult?, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
+    }
+    
+    
+    
+    
+    
     static func registerUser(withCredential credentials: AuthCredentials, completion: @escaping(Error?) -> Void) {
         
         ImageUploader.uploadImage(image: credentials.profileImage) { imageUrl in
