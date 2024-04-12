@@ -38,23 +38,41 @@ class ProfileHeader: UICollectionReusableView {
         return button
     }()
     
-    private let postLabel: UILabel = {
+    private lazy var postLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.attributedText = attributedStatText(value: 5, label: "posts")
         return label
     }()
-    private let followingLabel: UILabel = {
+    private lazy var followingLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.attributedText = attributedStatText(value: 1, label: "following")
         return label
     }()
-    private let followersLabel: UILabel = {
+    private lazy var followersLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.attributedText = attributedStatText(value: 2, label: "followers")
         return label
+    }()
+    let gridButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(imageLiteralResourceName: "grid"), for: .normal)
+        return button
+    }()
+    let listButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(imageLiteralResourceName: "list"), for: .normal)
+        return button
+    }()
+    let bookMarkButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(imageLiteralResourceName: "ribbon"), for: .normal)
+        return button
     }()
     //MARK: -Lifecycle
     
@@ -63,6 +81,7 @@ class ProfileHeader: UICollectionReusableView {
         
         backgroundColor = .white
         addSubview(profileImageView)
+        
         profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 16, paddingLeft: 12)
         profileImageView.setDimensions(height: 80, width: 80)
         profileImageView.layer.cornerRadius = 80 / 2
@@ -72,6 +91,29 @@ class ProfileHeader: UICollectionReusableView {
         
         addSubview(editProfileFollowButton)
         editProfileFollowButton.anchor(top: nameLabel.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 16, paddingLeft: 24, paddingRight: 24)
+        
+        let stack = UIStackView(arrangedSubviews: [postLabel, followersLabel, followingLabel])
+        addSubview(stack)
+        stack.centerY(inView: profileImageView)
+        stack.anchor(left: profileImageView.rightAnchor, right: rightAnchor, paddingLeft: 12, paddingRight: 12, height: 50)
+        
+        let topDivider = UIView()
+        topDivider.backgroundColor = .lightGray
+        
+        let bottomDivider = UIView()
+        bottomDivider.backgroundColor = .lightGray
+        
+        let buttonStack = UIStackView(arrangedSubviews: [gridButton, listButton, bookMarkButton])
+        buttonStack.distribution = .fillEqually
+        
+        addSubview(buttonStack)
+        addSubview(topDivider)
+        addSubview(bottomDivider)
+        
+        buttonStack.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 50)
+        
+        topDivider.anchor(top: buttonStack.topAnchor, left: leftAnchor, right: rightAnchor, height:0.5)
+        bottomDivider.anchor(top: buttonStack.bottomAnchor, left: leftAnchor, right: rightAnchor, height: 0.5)
     }
     
     required init?(coder: NSCoder) {
@@ -80,8 +122,23 @@ class ProfileHeader: UICollectionReusableView {
     //MARK: -Actions
     
     @objc func handleEditProfileFollowTapped() {
-        
+        print("DEBUG: handle edit profile tapped..")
     }
     
     //MARK: -Helpers
+    func attributedStatText(value: Int, label: String) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString()
+        
+        let valueAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.black]
+        let valueText = NSAttributedString(string: "\(value)\n", attributes: valueAttributes)
+        attributedString.append(valueText)
+        let labelAttributes : [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray]
+        let labelText = NSAttributedString(string: label, attributes: labelAttributes)
+        attributedString.append(labelText)
+        return attributedString
+//        let attributedText = NSMutableAttributedString(string: "\(value)/n", attributes: [.font: UIFont.boldSystemFont(ofSize: 14)])
+//        attributedText.append(NSAttributedString(string: label, attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray]))
+//        return attributedText
+    }
 }
+
