@@ -30,6 +30,9 @@
 		3EA7544C2BA3BE8D00C205AE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7544B2BA3BE8D00C205AE /* CustomTextField.swift */; };
 		3ED464222BBDE8F00021C6BA /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED464212BBDE8F00021C6BA /* ImageUploader.swift */; };
 		3ED464242BBDE8FE0021C6BA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED464232BBDE8FE0021C6BA /* AuthService.swift */; };
+		3EF22E6E2BC9B15100BBD248 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF22E6D2BC9B15100BBD248 /* UserService.swift */; };
+		3EF22E702BC9B26500BBD248 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF22E6F2BC9B26500BBD248 /* Constants.swift */; };
+		3EF22E722BC9B51700BBD248 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF22E712BC9B51700BBD248 /* User.swift */; };
 		9AE7A11225DBBC6D917A010E /* Pods_InstagramFirestoreClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C0C81E277360923B331C7A /* Pods_InstagramFirestoreClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,9 @@
 		3EA7544B2BA3BE8D00C205AE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3ED464212BBDE8F00021C6BA /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		3ED464232BBDE8FE0021C6BA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		3EF22E6D2BC9B15100BBD248 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3EF22E6F2BC9B26500BBD248 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3EF22E712BC9B51700BBD248 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9ED180760A247BE9E355178F /* Pods-InstagramFirestoreClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirestoreClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramFirestoreClone/Pods-InstagramFirestoreClone.debug.xcconfig"; sourceTree = "<group>"; };
 		F3C0C81E277360923B331C7A /* Pods_InstagramFirestoreClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirestoreClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3E2E05402BA22157007096B6 /* Extensions.swift */,
+				3EF22E6F2BC9B26500BBD248 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -128,6 +135,7 @@
 			children = (
 				3ED464212BBDE8F00021C6BA /* ImageUploader.swift */,
 				3ED464232BBDE8FE0021C6BA /* AuthService.swift */,
+				3EF22E6D2BC9B15100BBD248 /* UserService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 		3E20CF8F2B990AE0001A6B6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3EF22E712BC9B51700BBD248 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,12 +341,15 @@
 				3E5914BA2BA8CAED00247513 /* AuthenticationViewModel.swift in Sources */,
 				3E20CF952B990D31001A6B6D /* SearchController.swift in Sources */,
 				3E20CF762B990836001A6B6D /* AppDelegate.swift in Sources */,
+				3EF22E722BC9B51700BBD248 /* User.swift in Sources */,
 				3E20CF932B990D1B001A6B6D /* FeedController.swift in Sources */,
+				3EF22E702BC9B26500BBD248 /* Constants.swift in Sources */,
 				3E20CF9B2B990D69001A6B6D /* ProfileController.swift in Sources */,
 				3E20CF912B990B73001A6B6D /* MainTabController.swift in Sources */,
 				3E20CF992B990D59001A6B6D /* NotificationsController.swift in Sources */,
 				3ED464222BBDE8F00021C6BA /* ImageUploader.swift in Sources */,
 				3ED464242BBDE8FE0021C6BA /* AuthService.swift in Sources */,
+				3EF22E6E2BC9B15100BBD248 /* UserService.swift in Sources */,
 				3E4F9B382BC1DE8000CC8794 /* ProfileCell.swift in Sources */,
 				3E2E05412BA22157007096B6 /* Extensions.swift in Sources */,
 				3E20CF782B990836001A6B6D /* SceneDelegate.swift in Sources */,
