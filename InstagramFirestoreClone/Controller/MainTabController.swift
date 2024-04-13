@@ -42,8 +42,9 @@ class MainTabController: UITabBarController {
     
     func configureViewController() {
         view.backgroundColor = .white
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .gray
         tabBar.tintColor = .black
+        
         let layout = UICollectionViewFlowLayout()
         let feed = templateNavigationController(unselectedImage: UIImage(imageLiteralResourceName: "home_unselected"), selectedImage: UIImage(imageLiteralResourceName: "home_selected"), rootViewController: FeedController(collectionViewLayout: layout))
         let search = templateNavigationController(unselectedImage: UIImage(imageLiteralResourceName: "search_unselected"), selectedImage: UIImage(imageLiteralResourceName: "search_selected"), rootViewController: SearchController())
@@ -64,6 +65,8 @@ class MainTabController: UITabBarController {
         nav.tabBarItem.image = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage
         nav.navigationBar.tintColor = .black
+        nav.isToolbarHidden = false
+        nav.navigationBar.prefersLargeTitles = true
         return nav
     }
 }

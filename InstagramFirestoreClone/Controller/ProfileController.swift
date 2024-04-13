@@ -7,12 +7,21 @@
 
 import UIKit
 
+private let cellIdentifier = "ProfileCell"
+private let headerIdentifier = "ProfileHeader"
 
 class ProfileController: UICollectionViewController {
     
     //MARK: -Properties
-    private let cellIdentifier = "ProfileCell"
-    private let headerIdentifier = "ProfileHeader"
+    var user: User? {
+        didSet {
+            
+            navigationItem.title = user?.username
+            
+        }
+    }
+    
+    
     
     
     //MARK: -Lifecycle
@@ -20,10 +29,17 @@ class ProfileController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        fetchUser()
         
-  
     }
+    //MARK: -API
     
+    func fetchUser() {
+        UserService.fetchUser { user in
+            self.user = user
+            
+        }
+    }
     //MARK: -Helpers
     
     func configureCollectionView() {
