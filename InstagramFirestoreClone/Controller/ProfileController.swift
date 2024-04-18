@@ -21,9 +21,9 @@ class ProfileController: UICollectionViewController {
     
     //MARK: -Lifecycle
     
-    init (user: User, collectionViewLayout layout: UICollectionViewLayout) {
+    init (user: User) {
         self.user = user
-        super.init(collectionViewLayout: layout)
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {
