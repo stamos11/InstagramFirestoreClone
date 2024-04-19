@@ -54,21 +54,18 @@ class ProfileHeader: UICollectionReusableView {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.attributedText = attributedStatText(value: 5, label: "posts")
         return label
     }()
     private lazy var followingLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.attributedText = attributedStatText(value: 1, label: "following")
         return label
     }()
     private lazy var followersLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.attributedText = attributedStatText(value: 2, label: "followers")
         return label
     }()
     let gridButton: UIButton = {
@@ -151,20 +148,11 @@ class ProfileHeader: UICollectionReusableView {
         editProfileFollowButton.setTitle(viewModel.followButtonText, for: .normal)
         editProfileFollowButton.setTitleColor(viewModel.followbuttonTextColor, for: .normal)
         editProfileFollowButton.backgroundColor = viewModel.followButtonBackgroundColor
-    }
-    func attributedStatText(value: Int, label: String) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString()
         
-        let valueAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.black]
-        let valueText = NSAttributedString(string: "\(value)\n", attributes: valueAttributes)
-        attributedString.append(valueText)
-        let labelAttributes : [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray]
-        let labelText = NSAttributedString(string: label, attributes: labelAttributes)
-        attributedString.append(labelText)
-        return attributedString
-//        let attributedText = NSMutableAttributedString(string: "\(value)/n", attributes: [.font: UIFont.boldSystemFont(ofSize: 14)])
-//        attributedText.append(NSAttributedString(string: label, attributes: [.font: UIFont.systemFont(ofSize: 14), .foregroundColor: UIColor.lightGray]))
-//        return attributedText
+        postLabel.attributedText = viewModel.numberOfPosts
+        followersLabel.attributedText = viewModel.numberOfFollowers
+        followingLabel.attributedText = viewModel.numberOfFollowing 
     }
+
 }
 
