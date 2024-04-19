@@ -87,15 +87,22 @@ class MainTabController: UITabBarController {
         nav.navigationBar.prefersLargeTitles = true
         return nav
     }
-}
-func didFinishPickingMedia(_ picker: YPImagePicker) {
-    picker.didFinishPicking { items, _ in
-        picker.dismiss(animated: true) {
-            guard let selectedImage = items.singlePhoto?.image else {return}
-            print("DEBUG: Selected image is \(selectedImage)")
+    func didFinishPickingMedia(_ picker: YPImagePicker) {
+        picker.didFinishPicking { items, _ in
+            picker.dismiss(animated: true) {
+                guard let selectedImage = items.singlePhoto?.image else {return}
+                
+                let controller = UploadPostController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+                
+            }
         }
     }
 }
+
+
 
 // MARK: Authentication Delegate
 extension MainTabController: AuthenticationDelegate {

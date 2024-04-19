@@ -13,6 +13,6 @@ class ImageSelectorController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .white
     }
 }
