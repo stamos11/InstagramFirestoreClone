@@ -10,6 +10,11 @@ import UIKit
 class FeedCell: UICollectionViewCell {
     
     // MARK: -Properties
+    var viewModel: PostViewModel? {
+        didSet {
+            configure()
+        }
+    }
     
     
     private let profileImageView: UIImageView = {
@@ -70,7 +75,6 @@ class FeedCell: UICollectionViewCell {
     
     private let captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Some text caption for now"
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
@@ -88,10 +92,24 @@ class FeedCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-//        configureActionButtons()
-        layout()
-        
-        
+        addSubview(profileImageView)
+        profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 12)
+        profileImageView.setDimensions(height: 40, width: 40)
+        profileImageView.layer.cornerRadius = 40 / 2
+        addSubview(userNameButton)
+        userNameButton.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft:     8)
+        addSubview(postImageView)
+        postImageView.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8)
+        postImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
+        configureButtons()
+        addSubview(likesLabel)
+        likesLabel.textColor = .black
+        likesLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: -4, paddingLeft: 8)
+        addSubview(captionLabel)
+        captionLabel.textColor = .black
+        captionLabel.anchor(top: likesLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        addSubview(postTimeLabel)
+        postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor,paddingTop: 8, paddingLeft: 8)
         
     }
     
@@ -99,50 +117,24 @@ class FeedCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func layout() {
-        let stackView = UIStackView(arrangedSubviews: [likeButton, shareButton, commentButton])
-        
-        addSubview(profileImageView)
-        addSubview(userNameButton)
-        addSubview(postImageView)
-        addSubview(stackView)
-        addSubview(likesLabel)
-        addSubview(captionLabel)
-        addSubview(postTimeLabel)
-        
-        
-        
-        profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 12)
-        profileImageView.setDimensions(height: 40, width: 40)
-        profileImageView.layer.cornerRadius = 40 / 2
-        
-        userNameButton.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft:     8)
-        
-        postImageView.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8)
-        postImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
-        
-        
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        
-        
-        stackView.anchor(top: postImageView.bottomAnchor, width: 120, height: 50)
-        
-        likesLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: -4, paddingLeft: 8)
-        
-        captionLabel.anchor(top: likesLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
-        
-        postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor,paddingTop: 8, paddingLeft: 8)
-        
-        
-        
-
-    }
-    
     // MARK: Actions
     
     @objc func didTapUserName() {
         print("Debug: did tap username")
+    }
+    //MARK: -Helpers
+    func configure() {
+        guard let viewModel = viewModel else {return}
+        captionLabel.text = viewModel.caption
+        postImageView.sd_setImage(with: viewModel.imageUrl)
+    }
+    func configureButtons() {
+        let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, shareButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        
+        addSubview(stackView)
+        stackView.anchor(top: postImageView.bottomAnchor, width: 120, height: 50)
     }
     
 }
