@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class InputTextView: UITextView {
     
     //MARK: -Properties
@@ -18,7 +20,7 @@ class InputTextView: UITextView {
     }
     private let placeHolderLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .lightGray
+        label.textColor = .black
         return label
     }()
     
@@ -26,6 +28,7 @@ class InputTextView: UITextView {
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
+        
         addSubview(placeHolderLabel)
         placeHolderLabel.anchor(top: topAnchor, left: leftAnchor, paddingTop: 6, paddingLeft: 8)
         
