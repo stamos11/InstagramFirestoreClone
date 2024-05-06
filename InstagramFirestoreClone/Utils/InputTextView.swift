@@ -23,6 +23,17 @@ class InputTextView: UITextView {
         label.textColor = .black
         return label
     }()
+    var placeHolderShouldCenter = true {
+        didSet {
+            if placeHolderShouldCenter {
+                placeHolderLabel.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 8)
+                placeHolderLabel.centerY(inView: self)
+            } else {
+                placeHolderLabel.anchor(top: topAnchor, left: leftAnchor, paddingTop: 6, paddingLeft: 8)
+
+            }
+        }
+    }
     
     //MARK: -Lifecycle
     

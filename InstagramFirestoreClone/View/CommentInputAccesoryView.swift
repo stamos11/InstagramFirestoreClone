@@ -12,10 +12,12 @@ class CommentInputAccesoryView: UIView {
 ///    MARK: -Properties
     private let commentTextView: InputTextView = {
         let tv = InputTextView()
-        tv.backgroundColor = .white
         tv.placeHolderText = "Enter comment.."
+        tv.backgroundColor = .white
         tv.textColor = .black
         tv.font = UIFont.systemFont(ofSize: 15)
+        tv.isScrollEnabled = false
+        tv.placeHolderShouldCenter = true
         return tv
     }()
  
@@ -32,7 +34,7 @@ class CommentInputAccesoryView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         
-        autoresizingMask = .flexibleWidth
+        autoresizingMask = .flexibleHeight
         
         addSubview(postButton)
         postButton.anchor(top: topAnchor, right: rightAnchor, paddingRight: 8)
@@ -54,6 +56,9 @@ class CommentInputAccesoryView: UIView {
  
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override var intrinsicContentSize: CGSize {
+        return .zero
     }
     
     ///MARK: -Actions

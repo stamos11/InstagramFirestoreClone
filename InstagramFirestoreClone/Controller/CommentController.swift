@@ -13,7 +13,7 @@ class CommentController: UICollectionViewController {
     //MARK: -Properties
     private lazy var commentInputView: CommentInputAccesoryView = {
         
-        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 80)
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         let cv = CommentInputAccesoryView(frame: frame)
         return cv
     }()
