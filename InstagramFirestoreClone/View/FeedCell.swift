@@ -53,7 +53,7 @@ class FeedCell: UICollectionViewCell {
      lazy var likeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(imageLiteralResourceName: "like_unselected"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
         button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         return button
     }()

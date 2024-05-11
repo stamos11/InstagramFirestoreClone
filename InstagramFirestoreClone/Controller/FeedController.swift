@@ -123,7 +123,10 @@ extension FeedController: FeedCellDelegate {
     func cell(_ cell: FeedCell, didLike post: Post) {
         cell.viewModel?.post.didLike.toggle()
         if post.didLike {
-            print("DEBUG: Unlike post here")
+            PostService.unlikePost(post: post) { _ in
+                cell.likeButton.setImage(UIImage(imageLiteralResourceName: "like_unselected"), for: .normal)
+                
+            }
         } else {
             PostService.likePost(post: post) { _ in
                 cell.likeButton.setImage(UIImage(imageLiteralResourceName: "like_selected"), for: .normal)
