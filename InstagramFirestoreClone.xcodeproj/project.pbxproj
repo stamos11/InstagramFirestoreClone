@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0C23102BEFF52600EE5421 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0C230F2BEFF52600EE5421 /* NotificationCell.swift */; };
 		3E20CF762B990836001A6B6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CF752B990836001A6B6D /* AppDelegate.swift */; };
 		3E20CF782B990836001A6B6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CF772B990836001A6B6D /* SceneDelegate.swift */; };
 		3E20CF7A2B990836001A6B6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CF792B990836001A6B6D /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		0897E2DE8471618F10C64B4E /* Pods-InstagramFirestoreClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirestoreClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramFirestoreClone/Pods-InstagramFirestoreClone.release.xcconfig"; sourceTree = "<group>"; };
+		3E0C230F2BEFF52600EE5421 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		3E20CF722B990836001A6B6D /* InstagramFirestoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E20CF752B990836001A6B6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E20CF772B990836001A6B6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				3EB9719B2BE2BCAF00C55395 /* CommentCell.swift */,
 				3EBBEDF72BE3C88B00D600E5 /* CommentInputAccesoryView.swift */,
 				3EC750742BE9605A00F45C90 /* CommentViewModel.swift */,
+				3E0C230F2BEFF52600EE5421 /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				3EF22E6E2BC9B15100BBD248 /* UserService.swift in Sources */,
 				3E4F9B382BC1DE8000CC8794 /* ProfileCell.swift in Sources */,
 				3E2E05412BA22157007096B6 /* Extensions.swift in Sources */,
+				3E0C23102BEFF52600EE5421 /* NotificationCell.swift in Sources */,
 				3E20CF782B990836001A6B6D /* SceneDelegate.swift in Sources */,
 				3EB9719C2BE2BCAF00C55395 /* CommentCell.swift in Sources */,
 			);
