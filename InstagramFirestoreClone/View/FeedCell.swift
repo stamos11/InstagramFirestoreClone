@@ -147,6 +147,9 @@ class FeedCell: UICollectionViewCell {
         userNameButton.setTitle(viewModel.username, for: .normal)
         
         likesLabel.text = viewModel.likesLabelText
+        
+        likeButton.tintColor = viewModel.likeButtonTintColor
+        likeButton.setImage(viewModel.likeButtonImage, for: .normal)
     }
     func configureButtons() {
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, shareButton])
