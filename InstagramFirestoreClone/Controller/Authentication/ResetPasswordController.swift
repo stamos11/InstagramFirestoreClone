@@ -15,6 +15,8 @@ class ResetPasswordController: UIViewController {
     private let emailTextField = CustomTextField(placeholder: "Email")
     private var viewModel = ResetPasswordViewModel()
     weak var delegate: ResetPasswordControllerDelegate?
+    var email: String?
+    
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: UIImage(imageLiteralResourceName: "Instagram_logo_white"))
         iv.contentMode = .scaleAspectFill
@@ -69,6 +71,9 @@ class ResetPasswordController: UIViewController {
     func configureUI() {
         configureGradientLayer()
         
+        emailTextField.text = email
+        viewModel.email = email
+        updateForm()
         emailTextField.addTarget(self, action: #selector(textChange), for: .editingChanged)
         
         view.addSubview(backButton)

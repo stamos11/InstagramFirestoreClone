@@ -39,6 +39,13 @@ struct PostViewModel {
             return "\(post.likes) like"
         }
     }
+    var timeStampString: String? {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .full
+        return formatter.string(from: post.timestamp.dateValue(), to: Date())
+    }
     
     init(post: Post) {
         self.post = post

@@ -91,7 +91,6 @@ class FeedCell: UICollectionViewCell {
     
     private let postTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 days ago"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .red
         return label
@@ -155,6 +154,8 @@ class FeedCell: UICollectionViewCell {
         
         likeButton.tintColor = viewModel.likeButtonTintColor
         likeButton.setImage(viewModel.likeButtonImage, for: .normal)
+        
+        postTimeLabel.text = viewModel.timeStampString
     }
     func configureButtons() {
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, shareButton])
